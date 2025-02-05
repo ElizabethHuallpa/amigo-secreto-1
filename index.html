@@ -1,55 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23B197FC' d='M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z'/%3E%3C/svg%3E">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Amigo Secreto</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/media-queries.css">
-
-    <script src="https://kit.fontawesome.com/fdb84319a0.js" crossorigin="anonymous"></script>
-
 </head>
+
 <body>
-    <main>
-        <section class="secao__apresentacao">
-            <h1 class="secao__apresentacao__titulo">Amigo Secreto</h1>
-            <img class="secao__apresentacao__imagem" src="/assets/imagem-projeto.png" alt="desenho  de uma mulher delicado com flores na cor lilás">
-        </section>
-        <section class="secao__conteudo">
-            <h2 class="secao__conteudo__titulo">Digite o nome dos seus amigos</h2>
-            <div class="div__caixaDeTexto">
-                <input class="secao__conteudo__input" type="text" id="input_nome" placeholder="Digite o nome aqui..">
-                <div class="div_btn">
-                    <button  class="secao__conteudo__btn" type="submit" id="adicionar">Adicionar</button>
-                    <button  class="secao__conteudo__btn" type="submit" id="limpar">Limpar</button>
-                </div>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Amigo Secreto</h1>
+            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
+        </header>
+        
+        <section class="input-section">
+            <h2 class="section-title">Digite el nombre de sus amigos</h2>
+            <div class="input-wrapper">
+                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
+                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
             </div>
-            <p id="mensagemErro" ></p>
-            <ul class="secao__conteudo__lista-nome" id="listaNomes"></ul>
-            <h3 id="resultado" ></h3>
-            <button  class="secao__conteudo__btn-sortear" type="submit" id="sortear">SORTEAR</button>  
+           
+            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+            <ul id="resultado" class="result-list" aria-live="polite"></ul>
+
+            <div class="button-container">
+                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+                    Sortear amigo
+                </button>
+            </div>
         </section>
+        <footer>
+    </main>
 
-        <footer class="footer__connect">
-            <h4>Desenvolvido por Sara Pires.
-                <div class="footer__link">
-                    
-                    <a href="https://www.instagram.com/sarapires.dev/" target="_blank" rel="noopener noreferrer" >Instagram <i class="fa-brands fa-instagram" style="color: #8a2be2;"></i></a>
-                    <a href="https://www.linkedin.com/in/sara-pires-dev" target="_blank" rel="noopener noreferrer" >Linkedin <i class="fa-brands fa-linkedin" style="color: #8a2be2;"></i></a>
-                </div>
-            </h4>
-        </footer>
-    </main> 
-    
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </body>
-
 </html>
